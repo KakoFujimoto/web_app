@@ -5,8 +5,22 @@ void main() {
   runApp(const MyApp());
 }
 
+class InsertTaskScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Insert Task'), // タイトルを設定
+      ),
+      body: Center(
+        child: Text('Insert Task Screen'), // 画面に表示するコンテンツを設定
+      ),
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,48 +30,64 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.orange),
         useMaterial3: true,
       ),
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: () {
-                  // もんだい ボタンが押された時の処理
-                },
-                child: const Padding(
-                  padding: EdgeInsets.all(16), // ボタン内の余白を設定
-                  child: Text('もんだい',
-                      style:
-                          CustomTextStyles.buttonTextStyle), // ボタンのテキストスタイルを適用
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                // もんだい ボタンが押された時の処理
+              },
+              child: const Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'もんだい',
+                  style: CustomTextStyles.buttonTextStyle,
                 ),
               ),
-              SizedBox(height: 20), // ボタン間の垂直間隔を設定
-              ElevatedButton(
-                onPressed: () {
-                  // とうろく ボタンが押された時の処理
-                },
-                child: const Padding(
-                  padding: EdgeInsets.all(16), // ボタン内の余白を設定
-                  child: Text('とうろく',
-                      style:
-                          CustomTextStyles.buttonTextStyle), // ボタンのテキストスタイルを適用
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // とうろく ボタンが押された時の処理
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => InsertTaskScreen(),
+                  ),
+                );
+              },
+              child: const Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'とうろく',
+                  style: CustomTextStyles.buttonTextStyle,
                 ),
               ),
-              SizedBox(height: 20), // ボタン間の垂直間隔を設定
-              ElevatedButton(
-                onPressed: () {
-                  // せってい ボタンが押された時の処理
-                },
-                child: const Padding(
-                  padding: EdgeInsets.all(16), // ボタン内の余白を設定
-                  child: Text('せってい',
-                      style:
-                          CustomTextStyles.buttonTextStyle), // ボタンのテキストスタイルを適用
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // せってい ボタンが押された時の処理
+              },
+              child: const Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  'せってい',
+                  style: CustomTextStyles.buttonTextStyle,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
