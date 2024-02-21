@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'styles.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
                 child: const Padding(
                   padding: EdgeInsets.all(16), // ボタン内の余白を設定
                   child: Text('もんだい',
-                      style: TextStyle(fontSize: 24)), // ボタンのテキストサイズを2倍に
+                      style:
+                          CustomTextStyles.buttonTextStyle), // ボタンのテキストスタイルを適用
                 ),
               ),
               SizedBox(height: 20), // ボタン間の垂直間隔を設定
@@ -38,7 +40,8 @@ class MyApp extends StatelessWidget {
                 child: const Padding(
                   padding: EdgeInsets.all(16), // ボタン内の余白を設定
                   child: Text('とうろく',
-                      style: TextStyle(fontSize: 24)), // ボタンのテキストサイズを2倍に
+                      style:
+                          CustomTextStyles.buttonTextStyle), // ボタンのテキストスタイルを適用
                 ),
               ),
               SizedBox(height: 20), // ボタン間の垂直間隔を設定
@@ -49,7 +52,8 @@ class MyApp extends StatelessWidget {
                 child: const Padding(
                   padding: EdgeInsets.all(16), // ボタン内の余白を設定
                   child: Text('せってい',
-                      style: TextStyle(fontSize: 24)), // ボタンのテキストサイズを2倍に
+                      style:
+                          CustomTextStyles.buttonTextStyle), // ボタンのテキストスタイルを適用
                 ),
               ),
             ],
