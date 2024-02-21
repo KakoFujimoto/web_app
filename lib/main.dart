@@ -1,22 +1,9 @@
 import 'package:flutter/material.dart';
 import 'styles.dart';
+import 'insert_task.dart'; // insert_task.dart ファイルをインポート
 
 void main() {
   runApp(const MyApp());
-}
-
-class InsertTaskScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Insert Task'), // タイトルを設定
-      ),
-      body: Center(
-        child: Text('Insert Task Screen'), // 画面に表示するコンテンツを設定
-      ),
-    );
-  }
 }
 
 class MyApp extends StatelessWidget {
