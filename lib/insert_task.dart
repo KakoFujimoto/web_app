@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'styles.dart';
+import 'database_helper.dart'; // database_helper.dartをインポート
 
 class InsertTaskScreen extends StatefulWidget {
   @override
@@ -9,6 +10,9 @@ class InsertTaskScreen extends StatefulWidget {
 class _InsertTaskScreenState extends State<InsertTaskScreen> {
   TextEditingController questionController = TextEditingController();
   TextEditingController answerController = TextEditingController();
+
+  // DatabaseHelperのインスタンスを作成
+  final dbHelper = DatabaseHelper();
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +52,9 @@ class _InsertTaskScreenState extends State<InsertTaskScreen> {
                 // とうろく ボタンが押された時の処理
                 String question = questionController.text;
                 String answer = answerController.text;
+
+                // データをSQLiteに挿入
+                dbHelper.insertTask(question, answer);
 
                 showDialog(
                   context: context,
