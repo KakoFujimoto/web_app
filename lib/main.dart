@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'styles.dart';
-import 'insert_task.dart'; // insert_task.dart ファイルをインポート
+import 'insert_task.dart';
+import 'setting_task.dart';
 
 void main() {
   runApp(const MyApp());
@@ -65,6 +66,12 @@ class MyHomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // せってい ボタンが押された時の処理
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SettingTaskScreen(),
+                  ),
+                );
               },
               child: const Padding(
                 padding: EdgeInsets.all(16),
