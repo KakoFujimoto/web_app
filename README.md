@@ -1,6 +1,6 @@
 # 自分専用問題集
 
-A new Flutter project.
+flutterを使った自分用問題集です
 
 ## Getting Started
 
