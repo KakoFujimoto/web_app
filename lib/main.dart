@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'styles.dart';
 import 'insert_task.dart';
-import 'setting_task.dart';
+import 'setting_task.dart'; // setting_task.dart をインポート
 
 void main() {
   runApp(const MyApp());
@@ -69,7 +69,8 @@ class MyHomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SettingTaskScreen(),
+                    builder: (context) =>
+                        SettingTaskScreen(), // setting_task.dart の SettingTaskScreen ウィジェットを表示
                   ),
                 );
               },
