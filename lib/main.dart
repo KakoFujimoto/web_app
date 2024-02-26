@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'styles.dart';
-import 'insert_task.dart';
-import 'setting_task.dart'; // setting_task.dart をインポート
+import 'insert_task.dart'
+    as InsertTask; // insert_task.dart を InsertTask という名前でインポート
+import 'setting_task.dart'
+    as SettingTask; // setting_task.dart を SettingTask という名前でインポート
 
 void main() {
   runApp(const MyApp());
@@ -50,7 +52,8 @@ class MyHomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => InsertTaskScreen(),
+                    builder: (context) => InsertTask
+                        .InsertTaskScreen(), // InsertTaskScreen を InsertTask.InsertTaskScreen として参照
                   ),
                 );
               },
@@ -69,8 +72,8 @@ class MyHomePage extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) =>
-                        SettingTaskScreen(), // setting_task.dart の SettingTaskScreen ウィジェットを表示
+                    builder: (context) => SettingTask
+                        .SettingTaskScreen(), // SettingTaskScreen を SettingTask.SettingTaskScreen として参照
                   ),
                 );
               },
